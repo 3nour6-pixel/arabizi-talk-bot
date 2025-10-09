@@ -2,49 +2,25 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
-const plans = [
-  {
-    name: "VIP أساسي",
-    price: "99",
-    period: "سنويًا",
-    features: [
-      "بريد إلكتروني مخصص @vipm.org",
-      "مساحة تخزين 50 جيجابايت",
-      "حماية متقدمة من البريد المزعج",
-      "دعم فني عبر البريد الإلكتروني",
-      "تشفير شامل للرسائل"
-    ],
-    popular: false
-  },
-  {
-    name: "VIP بريميوم",
-    price: "199",
-    period: "سنويًا",
-    features: [
-      "كل مزايا الباقة الأساسية",
-      "مساحة تخزين 200 جيجابايت",
-      "حتى 5 عناوين بريد إضافية",
-      "دعم فني ذو أولوية",
-      "نسخ احتياطي تلقائي",
-      "واجهة مخصصة للأعمال"
-    ],
-    popular: true
-  },
-  {
-    name: "VIP إكسكلوسيف",
-    price: "399",
-    period: "سنويًا",
-    features: [
-      "كل مزايا الباقة البريميوم",
-      "مساحة تخزين غير محدودة",
-      "عناوين بريد غير محدودة",
-      "دعم فني على مدار الساعة",
-      "مدير حساب شخصي",
-      "تكامل متقدم مع تطبيقات الأعمال"
-    ],
-    popular: false
-  }
-];
+const plan = {
+  name: "VIP Mail",
+  price: "1",
+  period: "لمرة واحدة",
+  badge: "🔥 عرض خاص",
+  highlight: "بريدك الإلكتروني دائم طوال فترة اشتراك الدومين!",
+  features: [
+    "✨ بريد إلكتروني مخصص @vipm.org",
+    "🎯 صالح مدى الحياة (طوال فترة اشتراك الدومين)",
+    "🔒 حماية وتشفير كامل",
+    "📧 دعم فني متواصل",
+    "💎 انضم للنخبة الرقمية بسعر لا يُقاوم"
+  ],
+  dealPoints: [
+    "💸 دولار واحد فقط!",
+    "⏰ عرض محدود",
+    "🚀 تفعيل فوري"
+  ]
+};
 
 const Pricing = () => {
   return (
@@ -59,55 +35,63 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <Card 
-              key={index}
-              className={`relative bg-card/50 backdrop-blur-sm ${
-                plan.popular 
-                  ? 'border-[hsl(47,96%,53%)] shadow-[0_0_40px_hsl(47,96%,53%,0.2)] scale-105' 
-                  : 'border-border/40'
-              } hover:border-[hsl(47,96%,53%,0.5)] transition-all duration-300`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 rounded-full bg-gradient-to-r from-[hsl(47,96%,53%)] to-[hsl(280,70%,60%)] text-background text-sm font-bold">
-                    الأكثر شعبية
-                  </span>
-                </div>
-              )}
+        <div className="max-w-2xl mx-auto">
+          <Card 
+            className="relative bg-card/50 backdrop-blur-sm border-[hsl(47,96%,53%)] shadow-[0_0_60px_hsl(47,96%,53%,0.3)] hover:shadow-[0_0_80px_hsl(47,96%,53%,0.4)] transition-all duration-300"
+          >
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+              <span className="px-6 py-2 rounded-full bg-gradient-to-r from-[hsl(47,96%,53%)] to-[hsl(280,70%,60%)] text-background text-base font-bold animate-pulse">
+                {plan.badge}
+              </span>
+            </div>
+            
+            <CardHeader className="text-center pb-6 pt-16">
+              <CardTitle className="text-3xl mb-4">{plan.name}</CardTitle>
               
-              <CardHeader className="text-center pb-8 pt-12">
-                <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl font-bold text-gradient-gold">${plan.price}</span>
-                  <span className="text-muted-foreground">/{plan.period}</span>
+              <div className="mb-6">
+                <div className="flex items-baseline justify-center gap-2 mb-3">
+                  <span className="text-6xl font-bold text-gradient-gold">${plan.price}</span>
+                  <span className="text-xl text-muted-foreground">/{plan.period}</span>
                 </div>
-              </CardHeader>
+                <p className="text-lg font-semibold text-[hsl(47,96%,53%)] bg-[hsl(47,96%,53%,0.1)] py-2 px-4 rounded-lg inline-block">
+                  {plan.highlight}
+                </p>
+              </div>
 
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-[hsl(47,96%,53%)] shrink-0 mt-0.5" />
-                      <span className="text-foreground/90">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex flex-wrap gap-3 justify-center mb-6">
+                {plan.dealPoints.map((point, index) => (
+                  <span 
+                    key={index}
+                    className="px-4 py-2 bg-gradient-to-r from-[hsl(47,96%,53%,0.2)] to-[hsl(280,70%,60%,0.2)] border border-[hsl(47,96%,53%,0.3)] rounded-full text-sm font-bold"
+                  >
+                    {point}
+                  </span>
+                ))}
+              </div>
+            </CardHeader>
 
-                <Button 
-                  className={`w-full ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-[hsl(47,96%,53%)] to-[hsl(280,70%,60%)] text-background hover:opacity-90'
-                      : 'bg-card border border-[hsl(47,96%,53%)] text-[hsl(47,96%,53%)] hover:bg-[hsl(47,96%,53%,0.1)]'
-                  }`}
-                  size="lg"
-                >
-                  احجز الآن
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+            <CardContent className="space-y-6 pb-10">
+              <ul className="space-y-4">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start gap-3 text-lg">
+                    <Check className="w-6 h-6 text-[hsl(47,96%,53%)] shrink-0 mt-1" />
+                    <span className="text-foreground/90 font-medium">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button 
+                className="w-full bg-gradient-to-r from-[hsl(47,96%,53%)] to-[hsl(280,70%,60%)] text-background hover:opacity-90 text-lg py-6"
+                size="lg"
+              >
+                🎉 احجز الآن بدولار واحد فقط!
+              </Button>
+              
+              <p className="text-center text-sm text-muted-foreground">
+                ⚡ انضم لآلاف المستخدمين الذين اختاروا التميز الرقمي
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
