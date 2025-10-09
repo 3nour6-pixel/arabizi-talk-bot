@@ -1,4 +1,4 @@
-import { Shield, Lock, Zap, Crown, Headphones, Globe } from "lucide-react";
+import { Shield, Lock, Crown, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
@@ -16,16 +16,6 @@ const features = [
     icon: Crown,
     title: "عنوان VIP حصري",
     description: "احصل على بريد إلكتروني مميز ينتهي بـ @vipm.org يعكس تميزك."
-  },
-  {
-    icon: Zap,
-    title: "أداء فائق السرعة",
-    description: "خوادم عالية الأداء تضمن وصول رسائلك في لمح البصر."
-  },
-  {
-    icon: Headphones,
-    title: "دعم فني مميز",
-    description: "فريق دعم متاح على مدار الساعة لمساعدتك في أي وقت."
   },
   {
     icon: Globe,
