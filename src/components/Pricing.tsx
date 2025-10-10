@@ -28,7 +28,7 @@ const Pricing = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient-vip">اختر باقتك المثالية</span>
+            <span className="text-gold-premium">اختر باقتك المثالية</span>
           </h2>
           <p className="text-xl text-muted-foreground">
             أسعار شفافة وباقات مرنة تناسب احتياجاتك
@@ -46,7 +46,9 @@ const Pricing = () => {
             </div>
             
             <CardHeader className="text-center pb-6 pt-16">
-              <CardTitle className="text-3xl mb-4">{plan.name}</CardTitle>
+              <CardTitle className="text-3xl mb-4">
+                <span className="text-gold-premium">{plan.name}</span>
+              </CardTitle>
               
               <div className="mb-6">
                 <div className="flex items-baseline justify-center gap-2 mb-3">

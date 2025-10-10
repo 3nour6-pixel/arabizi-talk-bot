@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[hsl(47,96%,53%)] to-[hsl(280,70%,60%)] flex items-center justify-center">
               <Mail className="w-6 h-6 text-background" />
             </div>
-            <span className="text-2xl font-bold text-gradient-vip">VIP Mail</span>
+            <span className="text-2xl font-bold text-gold-premium">VIP Mail</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">

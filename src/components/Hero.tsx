@@ -23,7 +23,7 @@ const Hero = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            <span className="text-gradient-vip">VIP Mail</span>
+            <span className="text-gold-premium">VIP Mail</span>
           </h1>
 
           <p className="text-xl md:text-3xl text-foreground/90 leading-relaxed max-w-3xl mx-auto font-semibold">
