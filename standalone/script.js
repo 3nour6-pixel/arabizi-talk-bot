@@ -37,6 +37,12 @@ document.querySelectorAll('.btn-primary').forEach(button => {
     });
 });
 
+document.querySelectorAll('.btn-login').forEach(button => {
+    button.addEventListener('click', function() {
+        alert('سيتم توجيهك لصفحة تسجيل الدخول قريباً!');
+    });
+});
+
 document.querySelectorAll('.btn-outline').forEach(button => {
     button.addEventListener('click', function() {
         const featuresSection = document.querySelector('#features');
