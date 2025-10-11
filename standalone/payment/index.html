@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدفع - VIP Mail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text text-gold-premium">VIP Mail</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h1 class="payment-title">
+                        <span class="text-gold-premium">إتمام الحجز</span>
+                    </h1>
+                    <p class="payment-description">اختر طريقة الدفع المناسبة لك</p>
+                </div>
+
+                <!-- Payment Method Selection -->
+                <div class="payment-methods">
+                    <div class="method-card" id="paypal-card">
+                        <div class="method-icon">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+                        </div>
+                        <h3>PayPal</h3>
+                        <p>الدفع عبر باي بال</p>
+                    </div>
+
+                    <div class="method-card" id="instapay-card">
+                        <div class="method-icon instapay-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10"/>
+                            </svg>
+                        </div>
+                        <h3>InstaPay</h3>
+                        <p>الدفع عبر إنستا باي</p>
+                    </div>
+                </div>
+
+                <!-- PayPal Form -->
+                <div class="payment-form" id="paypal-form" style="display: none;">
+                    <div class="form-header">
+                        <h2>الدفع عبر PayPal</h2>
+                        <button class="btn-back" onclick="resetForm()">العودة</button>
+                    </div>
+                    
+                    <div class="payment-info">
+                        <div class="info-item">
+                            <span class="info-label">إيميل PayPal:</span>
+                            <span class="info-value">3nour6@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-type-selection">
+                        <label class="payment-type-option">
+                            <input type="radio" name="paypal-type" value="friends" checked>
+                            <div class="option-content">
+                                <h4>Friends & Family</h4>
+                                <p class="price">$1.00</p>
+                                <p class="price-note">دولار واحد فقط</p>
+                            </div>
+                        </label>
+
+                        <label class="payment-type-option">
+                            <input type="radio" name="paypal-type" value="goods">
+                            <div class="option-content">
+                                <h4>Goods & Services</h4>
+                                <p class="price">$1.54</p>
+                                <p class="price-note">يشمل رسوم PayPal</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <form class="booking-form" id="paypal-booking-form">
+                        <div class="form-group">
+                            <label>لقطة شاشة للتحويل *</label>
+                            <div class="file-upload">
+                                <input type="file" id="paypal-screenshot" accept="image/*" required>
+                                <label for="paypal-screenshot" class="file-label">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="17 8 12 3 7 8"/>
+                                        <line x1="12" y1="3" x2="12" y2="15"/>
+                                    </svg>
+                                    <span>اختر الصورة</span>
+                                </label>
+                                <span class="file-name" id="paypal-file-name">لم يتم اختيار ملف</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>البريد الإلكتروني *</label>
+                            <input type="email" class="form-input" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>رقم الهاتف *</label>
+                            <input type="tel" class="form-input" placeholder="+20 XXX XXX XXXX" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit">إرسال الطلب</button>
+                    </form>
+                </div>
+
+                <!-- InstaPay Form -->
+                <div class="payment-form" id="instapay-form" style="display: none;">
+                    <div class="form-header">
+                        <h2>الدفع عبر InstaPay</h2>
+                        <button class="btn-back" onclick="resetForm()">العودة</button>
+                    </div>
+                    
+                    <div class="payment-info">
+                        <div class="info-item">
+                            <span class="info-label">حساب InstaPay:</span>
+                            <span class="info-value">nourehabfaroukhassan@instapay</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">أو رقم الهاتف:</span>
+                            <span class="info-value" dir="ltr">+201158720470</span>
+                        </div>
+                        <div class="info-note">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <span>التحويل بالجنيه المصري ما يعادل 1 دولار في وقت التحويل</span>
+                        </div>
+                    </div>
+
+                    <form class="booking-form" id="instapay-booking-form">
+                        <div class="form-group">
+                            <label>لقطة شاشة للتحويل *</label>
+                            <div class="file-upload">
+                                <input type="file" id="instapay-screenshot" accept="image/*" required>
+                                <label for="instapay-screenshot" class="file-label">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="17 8 12 3 7 8"/>
+                                        <line x1="12" y1="3" x2="12" y2="15"/>
+                                    </svg>
+                                    <span>اختر الصورة</span>
+                                </label>
+                                <span class="file-name" id="instapay-file-name">لم يتم اختيار ملف</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>البريد الإلكتروني *</label>
+                            <input type="email" class="form-input" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>رقم الهاتف *</label>
+                            <input type="tel" class="form-input" placeholder="+20 XXX XXX XXXX" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit">إرسال الطلب</button>
+                    </form>
+                </div>
+
+                <!-- Success Message -->
+                <div class="success-message" id="success-message" style="display: none;">
+                    <div class="success-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h2>تم إرسال طلبك بنجاح!</h2>
+                    <p>سيتم التواصل معك عبر البريد الإلكتروني خلال 24 ساعة<br>وسيتم إرسال رابط إنشاء بريدك المميز</p>
+                    <button class="btn-primary" onclick="window.location.href='../index.html'">العودة للصفحة الرئيسية</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 VIP Mail. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

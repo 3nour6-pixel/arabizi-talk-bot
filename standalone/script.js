@@ -33,7 +33,7 @@ window.addEventListener('scroll', () => {
 // Button click handlers (placeholder - يمكنك إضافة الوظائف الحقيقية هنا)
 document.querySelectorAll('.btn-primary').forEach(button => {
     button.addEventListener('click', function() {
-        alert('سيتم توجيهك لصفحة الحجز قريباً!');
+        window.location.href = 'payment/index.html';
     });
 });
 
