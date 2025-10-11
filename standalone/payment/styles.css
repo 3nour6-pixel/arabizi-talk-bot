@@ -174,6 +174,17 @@ body {
     filter: brightness(0) invert(1);
 }
 
+.instapay-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.instapay-logo svg {
+    width: 100%;
+    height: 100%;
+    color: var(--foreground);
+}
+
 .instapay-icon {
     background: linear-gradient(to bottom right, hsla(47, 96%, 53%, 0.2), hsla(280, 70%, 60%, 0.2));
     border-radius: 1rem;
