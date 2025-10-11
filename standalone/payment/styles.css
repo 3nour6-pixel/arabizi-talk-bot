@@ -175,14 +175,16 @@ body {
 }
 
 .instapay-logo {
-    width: 100%;
-    height: 100%;
+    width: 120px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .instapay-logo svg {
-    width: 100%;
-    height: 100%;
-    color: var(--foreground);
+    width: auto;
+    height: 60px;
 }
 
 .instapay-icon {
