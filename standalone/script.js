@@ -247,4 +247,40 @@ if (instapayBookingForm) {
     });
 }
 
+// Inbox functionality
+if (document.querySelector('.inbox-container')) {
+    // Navigation items
+    const navItems = document.querySelectorAll('.inbox-nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+            
+            // Here you would filter emails based on category
+            const category = item.dataset.category;
+            console.log('Switched to category:', category);
+        });
+    });
+
+    // Email star toggle
+    const starButtons = document.querySelectorAll('.email-star');
+    starButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            button.classList.toggle('starred');
+        });
+    });
+
+    // Email item click
+    const emailItems = document.querySelectorAll('.email-item');
+    emailItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.remove('unread');
+            // Here you would open the email detail view
+            console.log('Email opened');
+        });
+    });
+}
+
 console.log('VIP Mail - موقع جاهز للعمل! ✨');

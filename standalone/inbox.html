@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البريد الوارد - VIP Mail</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Inbox Header -->
+    <header class="inbox-header">
+        <div class="inbox-header-content">
+            <div class="inbox-header-left">
+                <button class="icon-btn" aria-label="الإعدادات">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6"/>
+                        <path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24"/>
+                        <path d="M1 12h6m6 0h6"/>
+                        <path d="m4.93 19.07 4.24-4.24m5.66-5.66 4.24-4.24"/>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="الملف الشخصي">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="inbox-search-bar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" placeholder="ابحث في البريد..." />
+            </div>
+
+            <a href="index.html" class="inbox-logo">
+                <span class="inbox-logo-text">البريد</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Inbox Layout -->
+    <div class="inbox-container">
+        <!-- Sidebar -->
+        <aside class="inbox-sidebar">
+            <button class="btn-compose">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>
+                </svg>
+                <span>رسالة جديدة</span>
+            </button>
+
+            <nav class="inbox-nav">
+                <a href="#inbox" class="inbox-nav-item active" data-category="inbox">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/>
+                        <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>
+                    </svg>
+                    <span>الوارد</span>
+                    <span class="inbox-badge">12</span>
+                </a>
+
+                <a href="#starred" class="inbox-nav-item" data-category="starred">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                    <span>المميزة</span>
+                </a>
+
+                <a href="#sent" class="inbox-nav-item" data-category="sent">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                    <span>المرسلة</span>
+                </a>
+
+                <a href="#drafts" class="inbox-nav-item" data-category="drafts">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    <span>المسودات</span>
+                    <span class="inbox-badge">3</span>
+                </a>
+
+                <a href="#spam" class="inbox-nav-item" data-category="spam">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <span>البريد المزعج</span>
+                </a>
+
+                <a href="#trash" class="inbox-nav-item" data-category="trash">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    </svg>
+                    <span>المحذوفات</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Email List -->
+        <main class="inbox-main">
+            <div class="inbox-emails-list">
+                <!-- Email Item -->
+                <div class="email-item unread">
+                    <div class="email-sender">
+                        <div class="email-avatar">GT</div>
+                        <span class="email-sender-name">Gmail Team</span>
+                    </div>
+                    <div class="email-content">
+                        <h3 class="email-subject">مرحبًا بك في خدمة البريد</h3>
+                        <p class="email-preview">ابدأ استخدام البريد الإلكتروني الآن وجرّب المزايا الجديدة...</p>
+                    </div>
+                    <div class="email-meta">
+                        <span class="email-time">AM 9:01</span>
+                        <button class="email-star" aria-label="تمييز">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="email-item unread">
+                    <div class="email-sender">
+                        <div class="email-avatar">FB</div>
+                        <span class="email-sender-name">Facebook</span>
+                    </div>
+                    <div class="email-content">
+                        <h3 class="email-subject">تنبيهات جديدة بشأن منشورك</h3>
+                        <p class="email-preview">لديك 5 إعجابات جديدة على منشورك الأخير...</p>
+                    </div>
+                    <div class="email-meta">
+                        <span class="email-time">AM 8:44</span>
+                        <button class="email-star" aria-label="تمييز">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="email-item unread">
+                    <div class="email-sender">
+                        <div class="email-avatar">TW</div>
+                        <span class="email-sender-name">Twitter</span>
+                    </div>
+                    <div class="email-content">
+                        <h3 class="email-subject">تحديثات جديدة في حسابك</h3>
+                        <p class="email-preview">شاهد من قام بمتابعتك مؤخرًا...</p>
+                    </div>
+                    <div class="email-meta">
+                        <span class="email-time">AM 8:30</span>
+                        <button class="email-star" aria-label="تمييز">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="email-item">
+                    <div class="email-sender">
+                        <div class="email-avatar">LI</div>
+                        <span class="email-sender-name">LinkedIn</span>
+                    </div>
+                    <div class="email-content">
+                        <h3 class="email-subject">موقعك الوظيفي لفت الانتباه</h3>
+                        <p class="email-preview">أحد المجندين شاهد ملفك الشخصي بالأمس...</p>
+                    </div>
+                    <div class="email-meta">
+                        <span class="email-time">AM 8:15</span>
+                        <button class="email-star" aria-label="تمييز">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="email-item">
+                    <div class="email-sender">
+                        <div class="email-avatar">YT</div>
+                        <span class="email-sender-name">YouTube</span>
+                    </div>
+                    <div class="email-content">
+                        <h3 class="email-subject">فيديوهات جديدة من القنوات المفضلة</h3>
+                        <p class="email-preview">شاهد أحدث الفيديوهات من القنوات التي تتابعها...</p>
+                    </div>
+                    <div class="email-meta">
+                        <span class="email-time">AM 7:45</span>
+                        <button class="email-star" aria-label="تمييز">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="email-item">
+                    <div class="email-sender">
+                        <div class="email-avatar">AM</div>
+                        <span class="email-sender-name">Amazon</span>
+                    </div>
+                    <div class="email-content">
+                        <h3 class="email-subject">تم شحن طلبك</h3>
+                        <p class="email-preview">طلبك #123456 في الطريق إليك وسيصل خلال 3 أيام...</p>
+                    </div>
+                    <div class="email-meta">
+                        <span class="email-time">AM 7:20</span>
+                        <button class="email-star" aria-label="تمييز">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
