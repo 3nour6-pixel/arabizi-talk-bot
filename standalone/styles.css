@@ -1535,6 +1535,43 @@ button {
     }
 }
 
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    gap: 0;
+    background: var(--muted);
+    border-radius: 2rem;
+    padding: 0.25rem;
+    border: 1px solid var(--border);
+}
+
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    background: transparent;
+    color: var(--muted-foreground);
+    border: none;
+    cursor: pointer;
+}
+
+.lang-btn:hover {
+    color: var(--foreground);
+}
+
+.lang-btn.active {
+    background: var(--gold);
+    color: var(--background);
+}
+
+@media (max-width: 768px) {
+    .lang-switcher {
+        order: 3;
+    }
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
